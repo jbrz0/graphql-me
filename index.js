@@ -4,14 +4,22 @@ const expressPlayground = require('graphql-playground-middleware-express').defau
 
 const typeDefs = gql`
   type SocialLinks {
+    twitter: String
     github: String
+    twitch: String
+  }
+  type WorkLinks {
+    linkedIn: String
   }
   type Query {
     name: String
     occupation: String
     country: String
     region: String
+    website: String
+    languages: [String]
     social: SocialLinks!
+    work: WorkLinks!
   }
   schema {
     query: Query
@@ -19,14 +27,22 @@ const typeDefs = gql`
 `
 const resolvers = {
   SocialLinks: {
+    twitter: () => '@oddscenes',
     github: () => '@oddscenes',
+    twitch: () => '@oddscenes',
+  },
+  WorkLinks: {
+    linkedIn: () => 'linkedin.com/in/justinbrazeau',
   },
   Query: {
     name: () => 'Justin Brazeau',
     occupation: () => 'Frontend Developer',
     country: () => 'Canada',
     region: () => 'Niagara',
+    website: () => 'oddscenes.com',
+    languages: () => ['English'],
     social: () => ({}),
+    work: () => ({}),
   },
 }
 
