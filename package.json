@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "dev": "node index.js",
+    "start": "pm2 start index.js",
+    "stop": "pm2 stop all"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
     "apollo-server-express": "^2.11.0",
     "express": "^4.17.1",
     "graphql": "^15.0.0",
-    "graphql-playground-middleware-express": "^1.7.12"
+    "graphql-playground-middleware-express": "^1.7.12",
+    "pm2": "^4.4.1"
   }
 }

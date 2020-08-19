@@ -11,7 +11,7 @@ const typeDefs = gql`
     occupation: String
     country: String
     region: String
-    social: SocialLinks
+    social: SocialLinks!
   }
   schema {
     query: Query
@@ -26,6 +26,7 @@ const resolvers = {
     occupation: () => 'Frontend Developer',
     country: () => 'Canada',
     region: () => 'Niagara',
+    social: () => ({}),
   },
 }
 
