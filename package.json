@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "node index.js",
-    "start": "pm2 start index.js",
+    "start": "node index.js",
     "stop": "pm2 stop all"
   },
   "keywords": [],
