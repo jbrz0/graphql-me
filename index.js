@@ -52,6 +52,11 @@ const server = new ApolloServer({ typeDefs, resolvers })
 const app = express()
 server.applyMiddleware({ app })
 
+app.use((req, res, next) => {
+  res.append('Content-Security-Policy', 'upgrade-insecure-requests')
+  next()
+})
+
 app.get(
   '/playground',
   expressPlayground({
