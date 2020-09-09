@@ -1,4 +1,4 @@
-# Odd Scenes Website
+# AboutME GraphQL
 
 A crypto financial dashboard pulling updated data from Binance API
 
