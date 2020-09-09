@@ -1,4 +1,5 @@
 const express = require('express')
+
 const { ApolloServer, gql } = require('apollo-server-express')
 const expressPlayground = require('graphql-playground-middleware-express').default
 
@@ -49,6 +50,7 @@ const resolvers = {
 const PORT = 4000
 
 const server = new ApolloServer({ typeDefs, resolvers })
+
 const app = express()
 server.applyMiddleware({ app })
 
@@ -63,6 +65,7 @@ app.get(
     endpoint: '/graphql/</script><script>alert(1)</script><script>',
   }),
 )
+
 app.listen(PORT)
 
 console.log(
